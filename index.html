@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<meta charset="utf-8">
+		<title>Export Lists from Trello</title>
+		
+		<style>
+			.red {
+				color: red;
+			}
+			
+			input, textarea {
+				display: block;
+				max-width: 24rem;
+				width: 100%;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>Export Lists from Trello</h1>
+				<p>Get the card details from specified Trello lists in a handy copy-and-pasteable format.</p>
+			</header>
+			
+			<main>
+				<div class="step-1">
+					<p>First, authenticate with Trello so that we can access your boards, lists and cards in there.</p>
+					<button data-action="auth-with-trello">Auth with Trello</button>
+					<p class="response-msg"></p>
+				</div>
+				
+				<div class="step-2" style="display:none;">
+					<p>Great! Now you need to decide which board(s) you want to pull lists from.</p>
+					<p>Grab the board ID's from the URL of the boards and enter them as a comma-separated list into the field below.</p>
+					<p>(If you're not sure how to find a board's ID, visit that board in your browser and look at the address bar. You should see a URL like <code>https://trello.com/b/<span class="red">aBCdefGh</span>/board-name-here</code> - the letters in red there is the board's ID.)</p>
+					<input class="board-ids" type="text" placeholder="board-id-1, board-id-2, board-id-3">
+					
+					<p>IMPORTANT: Make sure to add the capitalised word 'EXPORT' to the title of all lists on your chosen board(s) that you want to export!
+					<p>Then you can click the button below to get all the cards from these lists:</p>
+					<button data-action="get-cards">Get cards</button>
+					<textarea class="cards-result"></textarea>
+				</div>
+			</main>
+		</div>
+		
+		<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script src="https://api.trello.com/1/client.js?key=3ba44810bd946f877c212b805c4ec64c"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
