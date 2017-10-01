@@ -4,15 +4,53 @@
 		<meta charset="utf-8">
 		<title>Export Lists from Trello</title>
 		
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		<style>
+			html {
+				font-family: "Inconsolata", monospace;
+				font-size: 20px;
+			}
+			
+			body {
+				margin: 0;
+				padding: 0;
+			} 
+			
+			.wrapper {
+				background: linear-gradient(270deg, #c2d1f5, #abfcf1, #e7aff7);
+				background-size: 600% 600%;
+				animation: GradientAnimation 30s ease infinite;
+			  min-height: 100vh;
+			}
+			
 			.red {
 				color: red;
 			}
 			
+			header, main {
+				padding: 2rem;
+			}
+			
+			main {
+				background: white;
+				margin: 0 auto;
+				max-width: 36rem;
+			}
+			
 			input, textarea {
 				display: block;
-				max-width: 24rem;
+				min-height: 2rem;
 				width: 100%;
+			}
+			
+			textarea {
+				min-height: 20rem;
+			}
+			
+			@keyframes GradientAnimation { 
+			  0% { background-position: 0% 50% }
+			  50% { background-position: 100% 50% }
+			  100% { background-position: 0% 50% }
 			}
 		</style>
 	</head>
@@ -34,7 +72,7 @@
 				<div class="step-2" style="display:none;">
 					<p>Great! Now you need to decide which board(s) you want to pull lists from.</p>
 					<p>Grab the board ID's from the URL of the boards and enter them as a comma-separated list into the field below.</p>
-					<p>(If you're not sure how to find a board's ID, visit that board in your browser and look at the address bar. You should see a URL like <code>https://trello.com/b/<span class="red">aBCdefGh</span>/board-name-here</code> - the letters in red there is the board's ID.)</p>
+					<p>(If you're not sure how to find a board's ID, visit that board in your browser and look at the address bar. You should see a URL like <code>https://trello.com/b/<span class="red">aBCdefGh</span>/board-name-here</code> - the bit in red there the board's ID.)</p>
 					<input class="board-ids" type="text" placeholder="board-id-1, board-id-2, board-id-3">
 					
 					<p>IMPORTANT: Make sure to add the capitalised word 'EXPORT' to the title of all lists on your chosen board(s) that you want to export!
