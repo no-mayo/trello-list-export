@@ -3,6 +3,7 @@ console.log("hola 🎉");
 $(document).ready(function() {
   var $cardsResult = $(".cards-result");
   var $listIds = $(".list-ids");
+  var $loaderBar = $(".loader .bar");
 
   $(".js-auth-with-trello").on("click", function() {
     window.Trello.authorize({
@@ -71,8 +72,9 @@ $(document).ready(function() {
     var listCount = 0;
     var listIds = $listIds.val();
 
-    // reset the .cards-result field ready for a new result
+    // reset the .cards-result field & loader bar ready for a new result
     $cardsResult.val("Fetching cards...");
+    updateLoader(0, 0);
 
     if (listIds) {
       listIds.forEach(function(listId) {
@@ -119,6 +121,9 @@ $(document).ready(function() {
                     // keep track of the cards we've gone through
                     cardCount++;
 
+                    // show the user our progress so far
+                    updateLoader(cardCount, cardIds.length);
+
                     // if we've been through all the cards...
                     if (cardCount == cardIds.length) {
                       sortAndDisplayCards(cardsToDisplay);
@@ -136,6 +141,12 @@ $(document).ready(function() {
       });
     }
   });
+
+  function updateLoader(current, total) {
+    let percentComplete = current / total * 100;
+
+    $loaderBar.css("width", percentComplete + "%");
+  }
 
   function sortAndDisplayCards(cards) {
     var cardsArray = Object.keys(cards).map(cardId => cards[cardId]);

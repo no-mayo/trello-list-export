@@ -9,9 +9,9 @@ body {
 }
 
 .wrapper {
+  animation: GradientAnimation 30s ease infinite;
   background: linear-gradient(270deg, #c2d1f5, #abfcf1, #e7aff7);
   background-size: 600% 600%;
-  animation: GradientAnimation 30s ease infinite;
   min-height: 100vh;
 }
 
@@ -58,6 +58,25 @@ select[multiple="true"] {
 
 textarea {
   min-height: 20rem;
+}
+
+.loader {
+  background: #c7c7c7;
+  display: inline-block;
+  height: 0.5rem;
+  min-width: 20rem;
+  position: relative;
+}
+
+.loader .bar {
+  animation: GradientAnimation 30s ease infinite;
+  background: linear-gradient(270deg, #c2d1f5, #abfcf1, #e7aff7);
+  background-size: 600% 600%;
+  display: inline-block;
+  height: 0.5rem;
+  left: 0;
+  position: absolute;
+  top: 0;
 }
 
 @keyframes GradientAnimation {
