@@ -1,0 +1,73 @@
+html {
+  font-family: "Inconsolata", monospace;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  background: linear-gradient(270deg, #c2d1f5, #abfcf1, #e7aff7);
+  background-size: 600% 600%;
+  animation: GradientAnimation 30s ease infinite;
+  min-height: 100vh;
+}
+
+.red {
+  color: red;
+}
+
+header,
+main {
+  padding: 2rem;
+}
+
+main {
+  background: white;
+  margin: 0 auto;
+  max-width: 36rem;
+}
+
+button {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 0.7rem;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  min-height: 2rem;
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  margin-bottom: 1rem;
+  width: auto;
+}
+
+select[multiple="true"] {
+  min-height: 10rem;
+}
+
+textarea {
+  min-height: 20rem;
+}
+
+@keyframes GradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
