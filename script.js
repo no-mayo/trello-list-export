@@ -71,6 +71,7 @@ $(document).ready(function() {
     var cardsToDisplay = {};
     var listCount = 0;
     var listIds = $listIds.val();
+    var includeChecklists = $("#includeChecklists")[0].checked;
 
     // reset the .cards-result field & loader bar ready for a new result
     $cardsResult.val("Fetching cards...");
@@ -112,9 +113,11 @@ $(document).ready(function() {
                       )
                     );
 
-                    card.displayString += checkItems
-                      .map(name => `  - ${name}\r\n`)
-                      .join("");
+                    if (includeChecklists) {
+                      card.displayString += checkItems
+                        .map(name => `  - ${name}\r\n`)
+                        .join("");
+                    }
                     card.displayString = cleanUp(card.displayString);
                     card.displayString += "\r\n"; // extra line break
 
