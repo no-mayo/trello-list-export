@@ -54,11 +54,11 @@ input[type="checkbox"] {
 }
 
 select[multiple="true"] {
-  min-height: 10rem;
+  min-height: 8rem;
 }
 
 textarea {
-  min-height: 20rem;
+  min-height: 12rem;
 }
 
 .loader {
@@ -78,6 +78,10 @@ textarea {
   left: 0;
   position: absolute;
   top: 0;
+}
+
+table {
+  width: 100%;
 }
 
 @keyframes GradientAnimation {

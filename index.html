@@ -42,11 +42,15 @@
 				<label for="includeChecklists">
 					<input checked="checked" id="includeChecklists" type="checkbox"> Include card checklists
 				</label>
+				<label for="countPoints">
+					<input checked="checked" id="countPoints" type="checkbox"> Count card points (must be enclosed in square brackets in the card titles, e.g. [5])
+				</label>
 				<button data-action="get-cards">Get cards</button>
 				<div class="loader">
 					<span class="bar"></span>
 				</div>
 				<textarea class="cards-result"></textarea>
+				<div id="pointsTableContainer"></div>
 			</div>
 		</main>
 	</div>
