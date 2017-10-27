@@ -81,6 +81,7 @@ textarea {
 }
 
 table {
+  border: 1px dotted black;
   width: 100%;
 }
 
